@@ -1,4 +1,4 @@
-package com.mgui.pokeapp.ui.screens
+package com.mgui.pokeapp.ui.screens.dex
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize

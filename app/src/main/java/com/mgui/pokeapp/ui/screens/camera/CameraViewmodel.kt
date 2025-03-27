@@ -2,5 +2,5 @@ package com.mgui.pokeapp.ui.screens.camera
 
 import androidx.lifecycle.ViewModel
 
-class CameraViewmodel : ViewModel() {
-}
+//FIXME Put here all the functions to process our bitmap
+class CameraViewmodel : ViewModel()

@@ -16,8 +16,8 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.createGraph
 import com.mgui.pokeapp.ui.navigation.BottomNavigationBar
 import com.mgui.pokeapp.ui.navigation.Screen
-import com.mgui.pokeapp.ui.screens.DexScreen
-import com.mgui.pokeapp.ui.screens.MapScreen
+import com.mgui.pokeapp.ui.screens.dex.DexScreen
+import com.mgui.pokeapp.ui.screens.map.MapScreen
 import com.mgui.pokeapp.ui.screens.feed.FeedScreen
 import com.mgui.pokeapp.ui.screens.feed.FeedViewmodel
 import com.mgui.pokeapp.ui.theme.PokeAppTheme
