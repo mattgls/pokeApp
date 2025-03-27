@@ -40,8 +40,7 @@ fun MainScreen() {
     val navController = rememberNavController()
     val feedViewmodel: FeedViewmodel = viewModel()
     Scaffold(
-        modifier = Modifier
-            .fillMaxSize(),
+        modifier = Modifier.fillMaxSize(),
         bottomBar = { BottomNavigationBar(navController) }
     ) { innerPadding ->
 
@@ -62,7 +61,6 @@ fun MainScreen() {
             graph = graph,
             modifier = Modifier.padding(innerPadding)
         )
-
     }
 }
 
