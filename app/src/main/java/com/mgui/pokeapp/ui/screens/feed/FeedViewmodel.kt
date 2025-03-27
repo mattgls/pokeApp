@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.mgui.pokeapp.data.Pokemon
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlin.random.Random
 
 class FeedViewmodel : ViewModel() {
     private val _pokemons = MutableStateFlow<List<Pokemon>>(emptyList())
@@ -14,10 +15,12 @@ class FeedViewmodel : ViewModel() {
     }
 
     private fun loadPokemons() {
+        // Test batch
         _pokemons.value = List(20) { index ->
             Pokemon(
                 uuid = "poke_$index",
-                name = "Pokemon #$index"
+                name = "Pokemon #$index",
+                confident = Random.nextFloat()
             )
         }
     }

@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Camera
 import androidx.compose.material3.Card
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -20,10 +20,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.mgui.pokeapp.data.Pokemon
+import com.mgui.pokeapp.ui.navigation.Screen
 
 @Composable
-fun FeedScreen(viewModel: FeedViewmodel) {
+fun FeedScreen(viewModel: FeedViewmodel, navController: NavHostController) {
     val pokemons = remember { viewModel.pokemons.value }
     LazyColumn(
         modifier = Modifier
@@ -36,14 +39,14 @@ fun FeedScreen(viewModel: FeedViewmodel) {
     }
     Box(
         modifier = Modifier
-            .fillMaxSize().padding(16.dp),
+            .fillMaxSize()
+            .padding(16.dp),
         contentAlignment = Alignment.BottomEnd,
     ) {
         FloatingActionButton(
-            //FIXME Implement the click to redirect to the custom Camera view
-            onClick = { /*onClick()*/ }
+            onClick = { navController.navigate(Screen.Camera.rout) }
         ) {
-            Icon(Icons.Default.Add, "Floating action button.")
+            Icon(Icons.Default.Camera, "Floating action button.")
         }
     }
 }
@@ -65,5 +68,5 @@ fun PokemonItem(pokemon: Pokemon) {
 @Composable
 fun Preview() {
     val vm = FeedViewmodel()
-    FeedScreen(vm)
+    FeedScreen(vm, rememberNavController())
 }

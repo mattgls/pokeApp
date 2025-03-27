@@ -22,6 +22,7 @@ import com.mgui.pokeapp.ui.screens.feed.FeedScreen
 import com.mgui.pokeapp.ui.screens.feed.FeedViewmodel
 import com.mgui.pokeapp.ui.theme.PokeAppTheme
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.mgui.pokeapp.ui.screens.camera.PhotoScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,13 +48,16 @@ fun MainScreen() {
         val graph =
             navController.createGraph(startDestination = Screen.Feed.rout) {
                 composable(route = Screen.Feed.rout) {
-                    FeedScreen(feedViewmodel)
+                    FeedScreen(feedViewmodel, navController)
                 }
                 composable(route = Screen.Map.rout) {
-                    MapScreen()
+                    MapScreen(navController)
                 }
                 composable(route = Screen.Dex.rout) {
                     DexScreen()
+                }
+                composable(route = Screen.Camera.rout) {
+                    PhotoScreen()
                 }
             }
         NavHost(
