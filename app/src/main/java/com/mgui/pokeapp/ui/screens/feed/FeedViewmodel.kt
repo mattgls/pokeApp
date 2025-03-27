@@ -18,9 +18,8 @@ class FeedViewmodel : ViewModel() {
         // Test batch
         _pokemons.value = List(20) { index ->
             Pokemon(
-                uuid = "poke_$index",
                 name = "Pokemon #$index",
-                confident = Random.nextFloat()
+                score = Random.nextFloat()
             )
         }
     }

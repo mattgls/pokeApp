@@ -1,3 +1,3 @@
 package com.mgui.pokeapp.data
 
-data class Pokemon(val uuid: String, var name: String, var confident: Float)
+data class Pokemon(var name: String, var score: Float)
